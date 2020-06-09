@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="cache-control" content="nocache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <title>bundleless Angularjs starter seed</title>
+    <!-- <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/angular-material/1.1.22/angular-material.min.css"> -->
+    <link rel="stylesheet" href="src/css/index.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/angular-material@1.1.22/angular-material.min.css"> -->
+
+    <script src='https://polyfill.io/v3/polyfill.min.js?features=es5,es6,es7&flags=gated' async></script>
+  </head>
+
+  <body class=''>
+    <app class='app-main'
+      ng-cloak
+    ></app>
+  </body>
+
+  <link rel="stylesheet" href="https://unpkg.com/angular-material@1.1.22/angular-material.min.css">
+  <script type="systemjs-importmap"
+    src='package.json'
+  ></script>
+  <script
+    src='https://unpkg.com/systemjs@6.3.1/dist/system.min.js'
+    onload='javascript:
+      System.import("appMain")
+    '
+  ></script>
+  <script
+    src="https://unpkg.com/systemjs@6.3.1/dist/extras/amd.min.js"
+  ></script>
+
+  <script async
+    src="https://unpkg.com/sw-toolbox@3.6.0/sw-toolbox.js"
+  ></script>
+</html>

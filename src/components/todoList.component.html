@@ -1,0 +1,11 @@
+<md-list>
+  <md-list-item class="md-2-line"
+    ng-repeat="item in state.todoList track by $index"
+  >
+    <md-checkbox ng-model="item.isDone"></md-checkbox>
+    <div class="md-list-item-text">
+      <h3>{{item.title}}</h3>
+      <p>{{item.content}}</p>
+    </div>
+  </md-list-item>
+</md-list>

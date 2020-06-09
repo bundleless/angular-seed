@@ -1,0 +1,21 @@
+
+.app-main[ng-cloak]{
+  display: block!important;
+  text-align: center;
+}
+.app-main[ng-cloak]:before{
+  display: inline-block;content: '';
+  width: 5vmin;
+  height: 5vmin;
+  margin-top: 45vmin;
+  border-radius: 999pt;
+  border: .2em solid skyblue;
+  border-color: skyblue rgba(0,0,0,.1) rgba(0,0,0,.1);
+  box-sizing: border-box;
+  animation: rotating 2s ease-in-out infinite;
+}
+@keyframes rotating {
+  to{
+    transform: rotate(720deg);
+  }
+}

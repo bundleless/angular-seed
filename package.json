@@ -1,0 +1,29 @@
+{
+  "name": "angularjs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "test": "",
+    "serve": "npx serve ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {},
+  "meta": {},
+  "imports": {
+    "appMain": "./src/js/index.js",
+    "angularjs": "https://unpkg.com/angular@1.7.9/angular.min.js",
+    "ngRoute": "https://unpkg.com/angular-route@1.7.9/angular-route.min.js",
+    "ngMaterial": "https://unpkg.com/angular-material@1.1.22/angular-material.min.js",
+    "ngAnimate": "https://unpkg.com/angular-animate@1.7.9/angular-animate.min.js",
+    "ngAria": "https://unpkg.com/angular-aria@1.7.9/angular-aria.min.js",
+    "uiRouter": "https://unpkg.com/angular-ui-router@1.0.26/release/ui-router-angularjs.min.js",
+    "_uiRouter": "https://unpkg.com/angular-ui-router@0.4.2/release/angular-ui-router.min.js",
+    "app": "./src/components/app.component.js",
+    "_angularAMD": "./src/js/angularAMD.debug.js",
+    "angularAMD": "https://unpkg.com/angular-amd@0.2.1/angularAMD.js"
+  }
+}
