@@ -1,8 +1,8 @@
 
 const navList= [
   {
-    name: ''
-    ,title: 'Default Page'
+    name: 'todos'
+    ,title: 'Todo List'
   }
   ,{
     name: 'phones'
@@ -26,13 +26,6 @@ const navList= [
   }
 ]
 
-console.info(
-  typeof exports,
-  typeof require,
-  typeof define
-)
-// if(typeof exports === 'object') module.exports= navList
-// if(typeof define=== 'function'&& define.amd) define(navList)
 ;(function (window, factory) {
   if (typeof exports === 'object') {
     module.exports = factory()

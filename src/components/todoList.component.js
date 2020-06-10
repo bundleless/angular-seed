@@ -1,11 +1,11 @@
 define([
-  'app'
+  'App'
 ], (
   app
 )=> {
   app.controller('todoList', [
     '$scope'
-    , function (
+    ,function (
       $scope
     ) {
       this.todoList= ([1,2,3]).map(el=> {

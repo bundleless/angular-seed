@@ -2,9 +2,11 @@
 define([
   'angularAMD'
   ,'../js/navs.config.js'
+  ,'./appNav.component.js'
 ], (
   angularAMD
   ,navList
+  ,appNav
 )=> {
   console.info({navList})
   window.vm= angular.module('app', [
@@ -16,7 +18,7 @@ define([
     $locationProvider.html5Mode(false);
   })
   .component('app', {
-    templateUrl: `/src/components/app.component.html?v=${new Date().getTime()}`
+    templateUrl: `./src/components/app.component.html`
     ,controller: function appCtrl(
       $scope
       ,$location
@@ -25,17 +27,15 @@ define([
       this.$onInit= ()=> {
         console.info('app init:', this)
       }
-      $scope.navList= navList
-      $scope.currentNavItem = $location.path()
-        ? $location.path().replace('/', '')
-        : $scope.navList[0].name
-
-      $scope.goto = function(page) {
-        $scope.status = "Goto " + page
-        $location.path(`/${page}`)
-      }
+      appNav($scope, $location)
     }
   })
+  // .controller(appNav.name, appNav)
+  // .component('nav', angularAMD.route({
+  //   templateUrl: './src/components/appNav.component.html'
+  //   ,controllerUrl: './src/components/appNav.component.js'
+  //   ,controller: 'appNav'
+  // }))
   .config([
     '$routeProvider'
     ,function (
@@ -57,7 +57,15 @@ define([
         ,controller: 'phoneList'
         ,controllerAs: 'state'
       }))
-      .otherwise('/')
+      .otherwise({
+        template: `<center md-whiteframe=-1>
+          <h1>404</h1>
+          <md-content layout-padding="99">
+            Lorem ipsum dolor sit amet, ne quod novum mei.
+          </md-content>
+        </center>
+        `
+      })
     }
   ])
   .run([

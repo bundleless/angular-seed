@@ -1,6 +1,19 @@
 // hack: mock requirejs for angularAMD 's dependenced
 window.require= ([deps], cb)=> System.import(deps).then(cb)
 
+// hack: dynamic set page base href
+document.head.appendChild(Object.assign(
+  document.createElement('base')
+  ,{
+    href: function(matched){
+      return matched
+        ? matched[0]
+        : '/'
+    }(location.pathname.match(/\/(.+?\/){0,1}/))
+  }
+  )
+)
+
 System.import('angularjs')
 .then((
   angularGlobal
@@ -31,5 +44,6 @@ System.import('angularjs')
   ,ngMaterial
 ])=> {
   // component: app
-  return System.import('./src/components/app.component.js')
+  // return System.import('./src/components/app.component.js')
+  return System.import('App')
 })
